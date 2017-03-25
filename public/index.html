@@ -1,0 +1,52 @@
+<!doctype html>
+<html ng-app="hangman">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Simple Hangman App</title>
+
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-route.js"></script>
+
+        <script src="core.js"></script>
+
+    </head>
+
+    <body ng-controller="mainController">
+        <div class="hangman-title">Hangman</div>
+        <div class="centered-box">Guess the word!  You get 10 guesses before <a href="https://en.wikipedia.org/wiki/Tom_Ketchum">Thomas Edward "Black Jack" Ketchum</a> is hung by the neck until he is dead.</div>
+        <div class="left-info-box">
+            <div class="centered-box">Enter your username below if you would like to keep and view game statistics or continue a previous game.  Please note you will lose your current game.  Entering a username but failing to click the "Load User" button will not immediately reset the letters below.</div>
+            <div class="centered-box">
+                <input class="username-input" type="text" ng-model="wordData.username">
+            </div>
+            <div class="hangman-button" ng-click="loadUser(wordData.username)">Load User</div>
+            <div class="centered-box">
+                <div class="letter-boxes" ng-repeat="letter in wordData.currentlyGuessed track by $index">{{letter}}</div>
+            </div>
+            <div class="centered-box">Guesses Remaining: {{10 - wordData.guesses}}</div>
+            <div class="centered-box">
+                <input class="guess-input" type="text" maxlength="1" alpha-only ng-change="checkGuess()" ng-model="current.guess">
+            </div>
+            <div class="centered-box">Games won: {{wordData.gamesWon}}  Games Lost: {{wordData.gamesLost}}</div>
+            <div class="centered-box you-lose" ng-if="wordData.guesses == 10">Black Jack is Dead.</div>
+            <div class="centered-box you-lose" ng-if="wordData.guesses != 10 && game.currentGameStatus == false">You Win!</div>
+            <div class="hangman-button" ng-click="newWord()">New Word</div>
+        </div>
+        
+        <div class="hangman-box">
+            <div class="hangman-wrapper">
+                <div class="curtain-panel" ng-style="{'transform': transformLeft}"></div>
+                <div class="hangman-image"></div>
+                <div class="curtain-panel" ng-style="{'transform': transformRight}"></div>
+            </div>
+
+        </div> 
+
+    </body>
+</html>

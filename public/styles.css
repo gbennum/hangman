@@ -1,0 +1,92 @@
+.hangman-title {
+	font-size: 48px;
+	padding: 12px;
+	text-align: center;
+}
+
+.left-info-box {
+	width: 50%;
+  height: 500px;
+  float: left;
+}
+
+.centered-box {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding: 0px 12px 12px 12px;
+  display: block
+}
+
+.username-input {
+  width: 300px;
+  padding-left: 12px;
+}
+
+.guess-input {
+	width: 40px;
+  padding-left: 12px;
+}
+
+.letter-boxes {
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+	margin: 0px 6px 12px 6px;
+	border-bottom: 2px solid black;
+	white-space: nowrap;
+	vertical-align: top;
+}
+
+.hangman-image {
+	background: url('./images/tom-ketchum.jpg') no-repeat;
+	background-size: cover;
+	position: absolute;
+  z-index: 1;
+  width: 50%;
+  height: 500px;
+}
+
+.hangman-box {
+  width: 50%;
+  height: 500px;
+  float: right;
+  overflow: hidden;
+}
+  
+.hangman-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.you-lose {
+	text-align: center;
+	font-size: 32px;
+  width: 100%;
+  height: 74px;
+  padding: 12px 0px;
+  color: black;
+}
+      
+.curtain-panel {
+  background: url('./images/curtains.jpg') no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: 500px;
+  float: left;
+  position: relative;
+  z-index: 2;
+}
+
+.hangman-button {
+	height: 45px;
+	width: 90px;
+	background: #30BA42;
+	display: block;
+	cursor: pointer;
+	border-radius: 5px;
+	line-height: 45px;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: 12px;
+}
