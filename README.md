@@ -6,6 +6,8 @@ I used nodemon to get updates to the server when a file is saved.  Run `npm inst
 
 Start your server with `nodemon server.js`
 
+You can access the app at http://localhost:8080/
+
 # General rules
 
 When the game is started, the player is represented with an empty field for each letter in the word.
